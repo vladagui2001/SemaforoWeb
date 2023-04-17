@@ -15,7 +15,17 @@ def GetUsario():
 def AddUsuarios():
     if request.method == 'POST':
         return ("OK")
-        
+
+#Get Semáforos
+@app.route("/Semaforos"  )
+def GetSemaforo():
+    response =  varIndex.DtoSemaforos().select()
+    return jsonify(response)
+
+@app.route("/Semaforos/Add", methods =["POST"] )
+def AddUSemaforo():
+    if request.method == 'POST':
+        return ("OK")  
 
 
 
