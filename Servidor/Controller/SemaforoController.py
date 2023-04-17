@@ -1,3 +1,0 @@
-class SemaforoController:
-    def Manual():
-        

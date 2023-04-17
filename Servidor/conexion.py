@@ -1,5 +1,5 @@
 import sqlite3
-from DataBase.config import server
+from config import server
 
 class Data:
 

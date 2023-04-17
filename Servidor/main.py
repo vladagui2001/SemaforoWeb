@@ -1,19 +1,21 @@
-from flask import Flask 
-from flask import jsonify as json
-from Controller.UsuarioController import UsuarioContrller
-from DataBase.UsuarioModel import UsuarioModel
-
-DtoUsario = UsuarioModel()
+from flask import Flask ,request
+from flask import jsonify 
+from index import index
 
 app= Flask(__name__)
-
+varIndex=index()
 
 #Get Usuarios
-@app.route("/Usarios")
+@app.route("/Usarios"  )
 def GetUsario():
-   # response = UsuarioContrller.Get()
-    DtoUsario.select()
-    return json([{"N":1},{"N":2}])
+    response =  varIndex.DtoUsuario().select()
+    return jsonify(response)
+
+@app.route("/Usarios/Add", methods =["POST"] )
+def AddUsuarios():
+    if request.method == 'POST':
+        return ("OK")
+        
 
 
 
