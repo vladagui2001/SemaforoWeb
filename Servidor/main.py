@@ -20,7 +20,6 @@ def login():
     password = request.json.get("password", None)
     response =  varIndex.DtoUsuario().select()
     for item in response:
-        print(item)
         if item["NOMBRE"] == username or item["PASSWORD"]==password:
             access_token = create_access_token(identity=username)
             return jsonify(access_token=access_token)
@@ -29,7 +28,10 @@ def login():
 
 #Get Usuarios
 @app.route("/Usarios"  )
+@jwt_required()
 def GetUsario():
+    current_user = get_jwt_identity()
+    print(current_user)
     response =  varIndex.DtoUsuario().select()
     return jsonify(response)
 
