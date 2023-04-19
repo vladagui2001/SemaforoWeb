@@ -24,7 +24,7 @@ def login():
             access_token = create_access_token(identity=username)
             return jsonify(access_token=access_token)
             #return "ok"
-    return jsonify({"msg":"por favor intrudse bien la inaforamcion requerida "})
+    return jsonify({"msg":"Introduzca correctamente la información requerida "})
 
 #Get Usuarios
 @app.route("/Usarios"  )
