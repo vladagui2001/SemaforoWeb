@@ -4,15 +4,15 @@ from Permisos_R_Usuarios import Permisos_R_Usuarios
 from SemaforosModel import SemaforoModel
 
 class index:
-    def DtoSemaforos():
+    def DtoSemaforos(self):
         return SemaforoModel()
 
-    def DtoUsuario():
+    def DtoUsuario(self):
         return UsuarioModel()
 
-    def DtoPermiso():
+    def DtoPermiso(self):
         return PermisoModel()
 
-    def DtoPermisoRUsuario():
+    def DtoPermisoRUsuario(self):
         return Permisos_R_Usuarios()
     

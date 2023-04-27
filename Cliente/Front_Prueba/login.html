@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <script src="vue.global.js"></script>
+    <div id="app">
+        <div class="container">
+            
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                  <input v-model="Usuario" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button v-on:click="sumit" class="btn btn-primary">Iniciar Sesión</button>
+              
+        </div>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="axios.min.js"></script>
+    <script>
+    const { createApp } = Vue
+  
+
+  createApp({
+    data() {
+      return {
+        Usuario:"",
+        Contraseña:""
+      }
+    },
+    methods:{
+        sumit(){
+            let username=this.Usuario
+            let password=this.Contraseña
+            console.log({
+            username,
+            password
+
+        });
+            axios.post("http://127.0.0.1:7000/login",
+        {
+            username,
+            password
+
+        }
+        ).then(function (response) {
+        
+        console.log(response)
+          
+        });
+
+        
+        }
+    }
+  }).mount('#app')
+</script>
+
+    </script>
+</body>
+</html>

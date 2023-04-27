@@ -1,4 +1,4 @@
-from DataBase.conexion import Data
+from conexion import Data
 
 class PermisoModel:
     def __init__(self):
