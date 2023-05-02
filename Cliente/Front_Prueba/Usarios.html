@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Configuración de Usuarios</title>
+</head>
+<body>
+    <script src="vue.global.js"></script>
+
+    <nav class="bg-dark navbar navbar-expand-lg " data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-0 h1" href="#">Semáforo Control</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Usarios.html">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">LogIn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Semaforos.html">Semaforos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div id="app">
+
+        <div class="container">
+            
+            <div class="container mt-3">
+                <div class="row">
+                  <div class="col">
+                    <h1>Administración de Usuarios</h1><br>
+                    <h3>Buscar Usuario:</h1><br>
+                  </div>
+                  
+                  <div class="container">
+                    <div class="row">
+                      <div class="col"><input  type="text" class="form-control" ></div>
+                      <div class="col"><input  type="text" class="form-control" ></div>
+                      <div class="col"><input  type="text" class="form-control" ></div>
+                      <div class="col"><button class="btn btn-dark">Buscar</button></div>
+                      <div class="col"><a href="AddSemaforos.html" class="btn btn-success">Agregar Nuevo Usuario</a></div>
+                    </div>
+                    </div>
+                    
+                <div class="bd-example">
+                  <table class="table mt-4">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre/Usuario</th>
+                        <th scope="col">Ficha</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="col">{{Usuarios[0].ID}}</td>
+                        <td scope="col">{{Usuarios[0].NOMBRE}}</td>
+                        <td scope="col">{{Usuarios[0].FICHA}}</td>
+                        <td scope="col">{{Usuarios[0].ROL}}</td>
+                        <td><div class="col mr-3">
+                          <button class="btn btn-outline-secondary">Modificar</button>
+                          <button class="btn btn-outline-secondary m-2">Eliminar</button>
+                      </div></td>
+                      </tr>
+
+                      <tr>
+                        <td scope="col">{{Usuarios[1].ID}}</td>
+                        <td scope="col">{{Usuarios[1].NOMBRE}}</td>
+                        <td scope="col">{{Usuarios[1].FICHA}}</td>
+                        <td scope="col">{{Usuarios[1].ROL}}</td>
+                        <td><div class="col mr-3">
+                          <button class="btn btn-outline-secondary">Modificar</button>
+                          <button class="btn btn-outline-secondary m-2">Eliminar</button>
+                      </div></td>
+                      </tr>
+
+                    </tbody>
+                  </table> 
+                </div>     
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="axios.min.js"></script>
+    <script>
+    const { createApp } = Vue
+  
+
+    createApp({
+        data() {
+          return {
+           Usuarios:[
+            {   
+                ID:1,
+                NOMBRE:"Ejemplo",
+                FICHA:"Ejemplo",
+                ROL:"Ejemplo"
+            },
+            {   
+                ID:2,
+                NOMBRE:"Ejemplo 2",
+                FICHA:"Ejemplo 2",
+                ROL:"Ejemplo 2"
+            }
+           ]
+          }
+        },
+        methods:{
+            
+        }
+      }).mount('#app')
+    </script>
+    
+        </script>
+    </body>
+    </html>
+
+
