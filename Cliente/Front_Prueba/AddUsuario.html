@@ -8,52 +8,70 @@
     <title>Login</title>
 </head>
 <body>
-    <script src="vue.global.js"></script>
-    <nav class="bg-dark navbar navbar-expand-lg " data-bs-theme="dark">
+  <script src="vue.global.js"></script>
+
+  <nav class="bg-dark navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">SFCol</a>
+        <a class="navbar-brand mb-0 h1 text-light" href="#">Semáforo Control</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Usarios.html">Usuarios</a>
+              <a class="nav-link text-light" href="Usarios.html">Usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">LogIn</a>
+              <a class="nav-link text-light" href="login.html">LogIn</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Semaforos</a>
+              <a class="nav-link text-light" href="Semaforos.html">Semaforos</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
     <div id="app">
-        <div class="container">
+        <div class="container mt-4">
+
+          <div class="col">
+            <h2>Añadir un Usuario</h2><br>
+            </div>
             
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                <div class="col-xs-4 mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nombre o Usuario</label>
                   <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Ficha</label>
+                <div class="col-xs-4 mb-3">
+                  <label for="exampleInputEmail1" class="form-label">No. de Ficha</label>
                   <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="mb-3">
+                <div class="col-xs-4 mb-3">
                   <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                   <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Confima Contraseña</label>
+                <div class="col-xs-4 mb-4">
+                  <label for="exampleInputPassword1" class="form-label">Confimar Contraseña</label>
                   <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
                 </div>
-                <button  class="btn btn-primary">Guardar</button>
-                <a href="Usarios.html" v-on:click="sumit" class="btn btn-primary">Iniciar Sesión</a>
+                
+                <div class="dropdown mb-3">
+                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Selecciona un rol
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Administrador</a>
+                    <a class="dropdown-item" href="#">Operador</a>
+                    <a class="dropdown-item" href="#">Visitante</a>
+                  </div>
+                </div>
+
+                <button  class="btn btn-outline-secondary">Cancelar</button>
+                <a href="Usarios.html" v-on:click="sumit" class="btn btn-success m-3">Crear Usuario</a>
               
         </div>
     </div>
