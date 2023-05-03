@@ -1,0 +1,156 @@
+<div class="container">
+    <div class="row">
+      <div class="col"><input  type="text" class="form-control" ></div>
+      <div class="col"><input  type="text" class="form-control" ></div>
+      <div class="col"><input  type="text" class="form-control" ></div>
+      <div class="col"><button class="btn btn-primary">Buscar</button></div>
+
+    </div>
+    <div class="row">
+      <div class="col text-start">ID</div>
+      <div class="col text-center">NOMBRE</div>
+      <div class="col text-end">IP</div>
+    </div>
+
+    <div class="row">
+      <div class="col text-start">{{Usuarios[0].ID}}</div>
+      <div class="col text-center">{{Usuarios[0].NOMBRE}}</div>
+      <div class="col text-end">{{Usuarios[0].FICHA}}</div>
+      <div class="col">
+          <button class="btn btn-primary">Modificar</button>
+          <button class="btn btn-primary">Eliminar</button>
+      </div>
+
+      createApp({
+        data() {
+          return {
+           Usuarios:[
+            {   
+                ID:1,
+                NOMBRE:"Ejemplo",
+                FICHA:"Ejemplo",
+                ROL:"Ejemplo"
+            }
+           ]
+          }
+        },
+        methods:{
+            
+        }
+      }).mount('#app')
+    </script>
+    
+        </script>
+    </body>
+    </html>
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <script src="vue.global.js"></script>
+    
+        <nav class="bg-dark navbar navbar-expand-lg " data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">SFCol</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Usarios.html">Usuarios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">LogIn</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Semaforos.html">Semaforos</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    
+        <div id="app">
+    
+            <div class="container">
+                
+                <div class="container mt-3">
+                    <div class="row">
+                      <div class="col">
+                        <h1>Admintracion de Usuarios</h1><br>
+                        <a href="AddUsuario.html" class="btn btn-primary">Agregar Nuevo Usuario</a>
+    
+                      </div>
+                      
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><input  type="text" class="form-control" ></div>
+                            <div class="col"><input  type="text" class="form-control" ></div>
+                            <div class="col"><input  type="text" class="form-control" ></div>
+                            <div class="col"><input  type="text" class="form-control" ></div>
+                            <div class="col"><button class="btn btn-primary">Buscar</button></div>
+                          </div>
+                          <div class="row">
+                            <div class="col">ID</div>
+                            <div class="col">NOMBRE</div>
+                            <div class="col">FICHA</div>
+                            <div class="col">ROL</div>
+                          </div>
+                          <div class="row">
+                            <div class="col">{{Usuarios[0].ID}}</div>
+                            <div class="col">{{Usuarios[0].NOMBRE}}</div>
+                            <div class="col">{{Usuarios[0].FICHA}}</div>
+                            <div class="col">{{Usuarios[0].ROL}}</div> 
+                            <div class="col">
+                                <button class="btn btn-primary">Modificar</button>
+                                <button class="btn btn-primary">Eliminar</button>
+                            </div> 
+                          </div>
+                        </div>
+            
+                      </div>
+                      
+                    </div>
+                  
+            </div>
+        </div>
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="axios.min.js"></script>
+        <script>
+        const { createApp } = Vue
+      
+    
+      createApp({
+        data() {
+          return {
+           Usuarios:[
+            {   
+                ID:1,
+                NOMBRE:"Ejemplo",
+                FICHA:"Ejemplo",
+                ROL:"Ejemplo"
+            }
+           ]
+          }
+        },
+        methods:{
+            
+        }
+      }).mount('#app')
+    </script>
+    
+        </script>
+    </body>
+    </html>

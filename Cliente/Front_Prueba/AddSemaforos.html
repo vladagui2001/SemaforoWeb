@@ -9,42 +9,46 @@
 </head>
 <body>
     <script src="vue.global.js"></script>
+
     <nav class="bg-dark navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">SFCol</a>
+        <a class="navbar-brand mb-0 h1 text-light" href="#">Semáforo Control</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Usarios.html">Usuarios</a>
+              <a class="nav-link text-light" href="Usarios.html">Usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">LogIn</a>
+              <a class="nav-link text-light" href="login.html">LogIn</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Semaforos.html">Semaforos</a>
+              <a class="nav-link text-light" href="Semaforos.html">Semaforos</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
     <div id="app">
-        <div class="container">
+        <div class="container mt-4">
+
+          <div class="col">
+            <h2>Añadir un Semáforo o un nodo</h2><br>
+            </div>
             
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                  <input v-model="Usuario" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="exampleInputEmail1" class="form-label">Nombre del Semáforo o del Nodo</label>
+                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                  <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
-                </div>
-                <button v-on:click="sumit" class="btn btn-primary">Iniciar Sesión</button>
+                <button  class="btn btn-outline-secondary">Cancelar</button>
+                <a href="Usarios.html" v-on:click="sumit" class="btn btn-success m-3" data-toggle="tooltip" data-placement="top" 
+                title="Recuerda que la dirección IP del semáforo se registra al inciar la Raspberry.">Registrar</a>
               
         </div>
     </div>
@@ -57,33 +61,11 @@
   createApp({
     data() {
       return {
-        Usuario:"",
-        Contraseña:""
+      
       }
     },
     methods:{
-        sumit(){
-            let username=this.Usuario
-            let password=this.Contraseña
-            console.log({
-            username,
-            password
-
-        });
-            axios.post("http://127.0.0.1:7000/login",
-        {
-            username,
-            password
-
-        }
-        ).then(function (response) {
         
-        console.log(response)
-          
-        });
-
-        
-        }
     }
   }).mount('#app')
 </script>
