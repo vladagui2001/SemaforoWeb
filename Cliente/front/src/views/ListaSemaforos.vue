@@ -1,34 +1,84 @@
 <template>
-    <div class="container">
+    <div id="app">
+        <div class="container">
+            <div class="container mt-3">
         <div class="row">
-            <div class="col"></div>
-            <div class="col">
-                <h1 class="text-center">Administracion de Semaforos</h1>
-                <div class="container">
-                    <router-link class="btn btn-primary position-absolute start-50" to="/registarsemaforo">Reguistar Semaforo nuebo</router-link>
-                    <br>
-                    <br>
-                    <table class="table table-dark table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">IP</th>
-                            <th scope="col">Acion</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                    </tbody>
-
-                </table>
-                </div>
+          <div class="col">
+            <h1>Administración de Semáforos</h1><br>
+            <h3>Buscar Semáforo:</h3><br>
+          </div>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un ID..."></div>
+              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Semáforo o Nodo..."></div>
+              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa una Dirección IP..."></div>
+              <div class="col"><button class="btn btn-dark">Buscar</button></div>
+              <div class="col"><a href="/RegistarUsuario" class="btn btn-success">Agregar Nuevo Semáforo</a></div>
             </div>
-            <div class="col"></div>
+            </div>
+            
+        <div class="bd-example">
+          <table class="table mt-4">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre Nodo</th>
+                <th scope="col">Dirección IP</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="col">{{Semaforo[0].ID}}</td>
+                <td scope="col">{{Semaforo[0].NOMBRE}}</td>
+                <td scope="col">{{Semaforo[0].FICHA}}</td>
+                <td><div class="col mr-3">
+                  <button class="btn btn-outline-secondary">Modificar</button>
+                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
+              </div></td>
+              </tr>
+
+              <tr>
+                <td scope="col">{{Semaforo[1].ID}}</td>
+                <td scope="col">{{Semaforo[1].NOMBRE}}</td>
+                <td scope="col">{{Semaforo[1].FICHA}}</td>
+                <td><div class="col mr-3">
+                  <button class="btn btn-outline-secondary">Modificar</button>
+                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
+              </div></td>
+              </tr>
+
+            </tbody>
+          </table> 
+        </div>     
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
 </template>
 <script>
-//Listar Los Semaforos Para su Respectivo Crud
+export default{
+    data() {
+      return {
+       Semaforo:[
+        {   
+            ID:1,
+            NOMBRE:"Ejemplo",
+            FICHA:"Ejemplo",
+            ROL:"Ejemplo"
+        },
+        {
+          ID:2,
+            NOMBRE:"Ejemplo 2",
+            FICHA:"Ejemplo 2",
+            ROL:"Ejemplo 2"
+        }
+       ]
+      }
+    },
+    methods:{
+        
+    }
+  }
 </script>

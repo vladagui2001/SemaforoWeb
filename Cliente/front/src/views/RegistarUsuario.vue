@@ -1,56 +1,31 @@
 <template>
-    <div>
-        <form class="container">
-            <div>
-                <label>Nombre Completo</label>
-                <input type="text"  class="input-group mb-3">
+    <div id="app">
+        <div class="container mt-4">
+
+          <div class="col">
+            <h2>Añadir un Semáforo o un nodo</h2><br>
             </div>
-            <div>
-                <label>Numero de Ficha</label>
-                <input type="text"  class="input-group mb-3">
-            </div>
-            <div>
-                <label>Contraseña</label>
-                <input type="password"  class="input-group mb-3">
-            </div>
-            <div>
-                <label>Confimar Contraseña</label>
-                <input type="password"  class="input-group mb-3">
-            </div>
-            <div>
-                <label class="mb-3">Permisos del Usuario</label>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modificar Configracion</label>
+            
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nombre del Semáforo o del Nodo</label>
+                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modo Manual</label>
-                </div>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modo Automatico Sensor</label>
-                </div>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modo Automatico DataSet</label>
-                </div>
-            </div>
-            <div>
-                <button class="btn btn-primary mt-3">Guardar</button>
-                <button class="btn btn-danger mt-3 ms-2">Canselar</button>
-            </div>
-        </form>
+                <button  class="btn btn-outline-secondary">Cancelar</button>
+                <a href="/ListaSemaforos" v-on:click="sumit" class="btn btn-success m-3" data-toggle="tooltip" data-placement="top" 
+                title="Recuerda que la dirección IP del semáforo se registra al inciar la Raspberry.">Registrar</a>
+              
+        </div>
     </div>
 </template>
 <script>
-
+export default{
+    data() {
+      return {
+      
+      }
+    },
+    methods:{
+        
+    }
+  }
 </script>
