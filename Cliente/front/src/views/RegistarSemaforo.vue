@@ -6,7 +6,7 @@
                 <input type="text"  class="input-group mb-3">
             </div>
             <div>
-                <label>Direccion ip (Parcial)</label>
+                <label>Dirección IP (Parcial)</label>
                 <input type="text"  class="input-group mb-3">
             </div>
             <div>
@@ -15,13 +15,13 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
                     </div>
-                   <label class="ms-3">Modificar Configracion</label>
+                   <label class="ms-3">Modificar Configración</label>
                 </div>
                 <div class="input-group">
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
                     </div>
-                   <label class="ms-3">Modo Manual</label>
+                   <label class="ms-3">Configuración por Botón ()</label>
                 </div>
                 <div class="input-group">
                     <div class="input-group-text">
