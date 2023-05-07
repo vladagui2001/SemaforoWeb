@@ -12,7 +12,7 @@
                 </div>
                 <button  class="btn btn-outline-secondary">Cancelar</button>
                 <a href="/ListaSemaforos" v-on:click="sumit" class="btn btn-success m-3" data-toggle="tooltip" data-placement="top" 
-                title="Recuerda que la dirección IP del semáforo se registra al inciar la Raspberry.">Registrar</a>
+                title="Recuerda que la dirección IP  del semáforo se registra al inciar la Raspberry.">Registrar</a>
               
         </div>
     </div>
