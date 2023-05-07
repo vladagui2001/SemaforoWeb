@@ -19,9 +19,28 @@
               <li class="nav-item">
                 <router-link class="nav-link" to="/login">Inisar Secion</router-link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
+              <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Administracion Usarios
+          </a>
+          <ul class="dropdown-menu">
+            <li><router-link class="dropdown-item" to="/listausuarios">Ver</router-link></li>
+            <li><router-link class="dropdown-item" to="/registarusuario">Registar</router-link></li>
+          </ul>
+        </li>
+
+       <!----> 
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Afministracion Semeaforo
+          </a>
+          <ul class="dropdown-menu">
+            <li><router-link class="dropdown-item" to="/ListaSemaforos">Ver</router-link></li>
+            <li><router-link class="dropdown-item" to="/registarsemaforo">Reguistar</router-link></li>
+          </ul>
+        </li>
+
+
             </ul>
           </div>
         </div>
