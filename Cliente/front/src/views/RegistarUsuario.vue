@@ -1,54 +1,43 @@
 <template>
     <div>
-        <form class="container">
-            <div>
-                <label>Nombre Completo</label>
-                <input type="text"  class="input-group mb-3">
+        <div class="container mt-4">
+
+          <div class="col">
+            <h2>Añadir un Usuario</h2><br>
             </div>
-            <div>
-                <label>Numero de Ficha</label>
-                <input type="text"  class="input-group mb-3">
-            </div>
-            <div>
-                <label>Contraseña</label>
-                <input type="password"  class="input-group mb-3">
-            </div>
-            <div>
-                <label>Confimar Contraseña</label>
-                <input type="password"  class="input-group mb-3">
-            </div>
-            <div>
-                <label class="mb-3">Permisos del Usuario</label>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modificar Configracion</label>
+            
+                <div class="col-xs-4 mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nombre o Usuario</label>
+                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modo Manual</label>
+                <div class="col-xs-4 mb-3">
+                  <label for="exampleInputEmail1" class="form-label">No. de Ficha</label>
+                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modo Automatico Sensor</label>
+                <div class="col-xs-4 mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
                 </div>
-                <div class="input-group">
-                    <div class="input-group-text">
-                        <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">
-                    </div>
-                   <label class="ms-3">Modo Automatico DataSet</label>
+                <div class="col-xs-4 mb-4">
+                  <label for="exampleInputPassword1" class="form-label">Confimar Contraseña</label>
+                  <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
                 </div>
-            </div>
-            <div>
-                <button class="btn btn-primary mt-3">Guardar</button>
-                <button class="btn btn-danger mt-3 ms-2">Canselar</button>
-            </div>
-        </form>
+                
+                <div class="dropdown mb-3">
+                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Selecciona un rol
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Administrador</a>
+                    <a class="dropdown-item" href="#">Operador</a>
+                    <a class="dropdown-item" href="#">Visitante</a>
+                  </div>
+                </div>
+
+                <button  class="btn btn-outline-secondary">Cancelar</button>
+                <a href="Usarios.html" v-on:click="sumit" class="btn btn-success m-3">Crear Usuario</a>
+              
+        </div>
     </div>
 </template>
 <script>
