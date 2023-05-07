@@ -1,14 +1,15 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div>
+      <p>Por favor inicia secion si no lo as echo <router-link class="nav-link" to="/login">Inisar Secion</router-link></p>
+    </div>
+    <div>
+      <p>Gracias por iniciar secion</p>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-
 export default {
   name: 'HomeView',
   components: {
