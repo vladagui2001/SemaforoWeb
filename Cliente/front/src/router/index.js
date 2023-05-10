@@ -23,9 +23,9 @@ const routes = [
     component:ListaSemaforos
   },
   {
-    path:'/listausuarios',
-    name:'ListaUsuarios',
-    component:ListaUsuarios
+    path:'/registarsemaforo',
+    name:'RegistarSemaforo',
+    component:RegistarSemaforo
   },
   {
     path:'/Semaforo',
@@ -33,19 +33,19 @@ const routes = [
     component:Semaforos
   },
   {
-    path:'/login',
-    name:'login',
-    component:LogIn
-  },
-  {
     path:'/configuracion',
     name:'ConfiguracionModo',
     component:Configuracion
   },
   {
-    path:'/registarsemaforo',
-    name:'RegistarSemaforo',
-    component:RegistarSemaforo
+    path:'/login',
+    name:'login',
+    component:LogIn
+  },
+  {
+    path:'/listausuarios',
+    name:'ListaUsuarios',
+    component:ListaUsuarios
   },
   {
     path:'/registarusuario',

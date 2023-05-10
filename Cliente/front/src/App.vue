@@ -14,7 +14,7 @@
                 <router-link class="nav-link" to="/">Home</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/Semaforo">Semaforos</router-link>
+                <router-link class="nav-link" to="/Semaforo">Control de Semaforos</router-link>
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" to="/login">Inisar Secion</router-link>

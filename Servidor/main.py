@@ -15,7 +15,7 @@ varIndex=index()
 app.config["JWT_SECRET_KEY"] = "SemaforoMagico"  # Change this!
 jwt = JWTManager(app)
 
-#Login cewado
+#---------Area de Login --------------
 @app.route("/login", methods=["POST"])
 def login():
     username = request.json.get("username")
@@ -30,6 +30,15 @@ def login():
             #return "ok"
     return jsonify({"msg":"Introduzca correctamente la información requerida "})
 
+#-----------------------------------------------------------------------------------
+#-------------------Area de Semaforo -----------------------------------------------
+#Get Semáforos
+@app.route("/Semaforos"  )
+def GetSemaforo():
+    response =  varIndex.DtoSemaforos().select()
+    return jsonify(response)
+
+#-----------------------------------------------------------------------------------
 #Get Usuarios
 @app.route("/Usarios"  )
 #@jwt_required()
@@ -44,11 +53,6 @@ def AddUsuarios():
     if request.method == 'POST':
         return ("OK")"""
 
-#Get Semáforos
-@app.route("/Semaforos"  )
-def GetSemaforo():
-    response =  varIndex.DtoSemaforos().select()
-    return jsonify(response)
 
 """@app.route("/Semaforos/Add", methods =["POST"] )
 def AddUSemaforo():

@@ -14,7 +14,7 @@
               <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Semáforo o Nodo..."></div>
               <div class="col"><input  type="text" class="form-control" placeholder="Ingresa una Dirección IP..."></div>
               <div class="col"><button class="btn btn-dark">Buscar</button></div>
-              <div class="col"><a href="/RegistarUsuario" class="btn btn-success">Agregar Nuevo Semáforo</a></div>
+              <div class="col"><router-link to="/registarsemaforo" class="btn btn-success">Agregar Nuevo Semáforo</router-link></div>
             </div>
             </div>
             
@@ -29,26 +29,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td scope="col">{{Semaforo[0].ID}}</td>
-                <td scope="col">{{Semaforo[0].NOMBRE}}</td>
-                <td scope="col">{{Semaforo[0].FICHA}}</td>
+              <tr v-for="(Semaforo) in Semaforos">
+                <td scope="col">{{Semaforo.ID}}</td>
+                <td scope="col">{{Semaforo.NOMBRE}}</td>
+                <td scope="col">{{Semaforo.IP}}</td>
                 <td><div class="col mr-3">
                   <button class="btn btn-outline-secondary">Modificar</button>
                   <button class="btn btn-outline-secondary m-2">Eliminar</button>
               </div></td>
               </tr>
-
-              <tr>
-                <td scope="col">{{Semaforo[1].ID}}</td>
-                <td scope="col">{{Semaforo[1].NOMBRE}}</td>
-                <td scope="col">{{Semaforo[1].FICHA}}</td>
-                <td><div class="col mr-3">
-                  <button class="btn btn-outline-secondary">Modificar</button>
-                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
-              </div></td>
-              </tr>
-
             </tbody>
           </table> 
         </div>     
@@ -61,23 +50,18 @@
 export default{
     data() {
       return {
-       Semaforo:[
-        {   
-            ID:1,
-            NOMBRE:"Ejemplo",
-            FICHA:"Ejemplo",
-            ROL:"Ejemplo"
-        },
-        {
-          ID:2,
-            NOMBRE:"Ejemplo 2",
-            FICHA:"Ejemplo 2",
-            ROL:"Ejemplo 2"
-        }
-       ]
+       Semaforos:[]
       }
     },
+    created(){
+      this.$http.get('http://127.0.0.1:7000/Semaforos')
+                    .then(res=>{
+                     this.Semaforos= res.data
+                    })
+      
+    },
     methods:{
+      
         
     }
   }
