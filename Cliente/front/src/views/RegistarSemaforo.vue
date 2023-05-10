@@ -8,9 +8,9 @@
             
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nombre del Semáforo o del Nodo</label>
-                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input v-model="Nombre"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <button  class="btn btn-outline-secondary">Reguistar</button>
+                <button v-on:click="enviar()"  class="btn btn-outline-secondary">Reguistar</button>
                 <router-link to="/listasemaforos"  class="btn btn-success m-3" data-toggle="tooltip" data-placement="top" 
                 title="Recuerda que la dirección IP del semáforo se registra al inciar la Raspberry.">Cancelar</router-link>
               
@@ -27,6 +27,13 @@ export default{
     },
     
     methods:{
+      enviar(){
+        let Nombre = this.Nombre
+        this.$http.post('http://127.0.0.1:7000/Semaforos/Add',
+        {
+          Nombre
+        })
+      }
         
     }
 }

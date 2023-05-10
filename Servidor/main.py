@@ -38,6 +38,14 @@ def GetSemaforo():
     response =  varIndex.DtoSemaforos().select()
     return jsonify(response)
 
+#POST Semáforos
+@app.route("/Semaforos/Add",methods=["POST"])
+def PostSemaforo():
+    Ip="xxx.xxx.x.xx"
+    Nombre=request.json.get("Nombre")
+    response =  varIndex.DtoSemaforos().insert(IP=Ip,NOMBRE=Nombre)
+    return jsonify(response)
+
 #-----------------------------------------------------------------------------------
 #Get Usuarios
 @app.route("/Usarios"  )
