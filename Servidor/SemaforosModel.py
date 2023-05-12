@@ -11,6 +11,13 @@ class SemaforoModel:
             self.lista.append(obj)
         return self.lista
     
+    def selectById (self,Id):
+        self.lista=[]
+        for row in self.DataBase.Selecionar('SELECT * FROM SEMAFORO WHERE "_rowid_"='+str(Id)):
+            obj = {"ID":row[0],"IP":row[1],"NOMBRE":row[2]}
+            self.lista.append(obj)
+        return self.lista
+    
     def insert(self,NOMBRE,IP):
         query='INSERT INTO "main"."SEMAFORO"("IP","NOMBRE") VALUES ("'+IP+'","'+NOMBRE+'")'
         print(self.DataBase.Modificar(query))

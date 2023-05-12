@@ -8,6 +8,7 @@ import RegistarSemaforo from '@/views/RegistarSemaforo.vue'
 import RegistarUsuario from '@/views/RegistarUsuario.vue'
 import ListaSemaforos from '@/views/ListaSemaforos.vue'
 import ListaUsuarios from '@/views/ListaUsuarios.vue'
+import ModificarSemaforo from '@/views/ModificarSemaforo.vue'
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ const routes = [
     path:'/registarsemaforo',
     name:'RegistarSemaforo',
     component:RegistarSemaforo
+  },
+  {
+    path:'/Modificarsemaforo/:id',
+    name:'ModificarSemaforo',
+    component:ModificarSemaforo
   },
   {
     path:'/Semaforo',

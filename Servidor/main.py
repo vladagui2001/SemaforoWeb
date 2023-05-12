@@ -38,12 +38,28 @@ def GetSemaforo():
     response =  varIndex.DtoSemaforos().select()
     return jsonify(response)
 
+@app.route("/Semaforos/<id>"  )
+def GetByIdSemaforo(id):
+    response =  varIndex.DtoSemaforos().selectById(Id=id)
+    if response != []:
+        return jsonify(response)
+    else:
+        return jsonify({"mensage":"usario no encotrado"})
+
 #POST Semáforos
 @app.route("/Semaforos/Add",methods=["POST"])
 def PostSemaforo():
     Ip="xxx.xxx.x.xx"
     Nombre=request.json.get("Nombre")
     response =  varIndex.DtoSemaforos().insert(IP=Ip,NOMBRE=Nombre)
+    return jsonify(response)
+#PUT Semáforos
+@app.route("/Semaforos/Edit",methods=["POST"])
+def PutSemaforo():
+    Id=request.json.get("Id")
+    Ip=request.json.get("Ip")
+    Nombre=request.json.get("Nombre")
+    response =  varIndex.DtoSemaforos().Update(IP=Ip,NOMBRE=Nombre,id=Id)
     return jsonify(response)
 
 #-----------------------------------------------------------------------------------

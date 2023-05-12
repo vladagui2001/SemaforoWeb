@@ -6,6 +6,9 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import '@/assets/Material/css/styles.css'
+import '@/assets/Material/js/material.js'
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'sweetalert2/dist/sweetalert2.min.css';
 
