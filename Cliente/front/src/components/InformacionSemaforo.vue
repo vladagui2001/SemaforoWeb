@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2">
+    <div class="mt-5">
         <div class="container">
   <div class="row">
     <div class="col">
@@ -13,16 +13,16 @@
       <label v-else>Verde</label>
     </div>
     <div class="col">
-      <button class="btn btn-success">Ensender Luz Verde</button>
+      <button class="btn btn-success">Encender Luz Verde</button>
     </div>
     <div class="col">
-        <button class="btn btn-danger">Ensender Luz Roja</button>
+        <button class="btn btn-danger">Encender Luz Roja</button>
     </div>
     <div class="col">
       <label>IP {{ PDirecionIp }}</label>
     </div>
     <div class="col">
-        <router-link to="/configuracion"  class="btn btn-primary">Modo</router-link>
+        <router-link to="/configuracion"  class="btn btn-primary">Ajustes</router-link>
     </div>
   </div>
 </div>

@@ -14641,6 +14641,13 @@ body {
   background-position: center;
 }
 
+.bg-pattern-mina {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../assets/img/mina/industrias.jpg");
+  background-position: center;
+}
+
 .bg-white-50 {
   background-color: rgba(255, 255, 255, 0.5);
 }

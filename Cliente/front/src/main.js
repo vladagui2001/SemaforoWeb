@@ -8,6 +8,13 @@ import VueAxios from 'vue-axios'
 
 import '@/assets/Material/css/styles.css'
 import '@/assets/Material/js/material.js'
+import '@/assets/Material/js/bootstrap.bundle.min.js'
+import '@/assets/Material/js/scripts.js'
+
+//Fuentes de letra de google 
+import '@/assets/Material/assets/fonts/font1.css'
+import '@/assets/Material/assets/fonts/font2.css'
+import '@/assets/Material/assets/fonts/font3.css'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'sweetalert2/dist/sweetalert2.min.css';

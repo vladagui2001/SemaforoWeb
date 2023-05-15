@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <p>Por favor inicia secion si no lo as echo <router-link class="nav-link" to="/login">Inisar Secion</router-link></p>
+      <p> Por favor inicie sesión si no lo ha hecho. <router-link class="nav-link" to="/login">Iniciar Sesión</router-link></p>
     </div>
     <div>
       <p>Gracias por iniciar secion</p>
