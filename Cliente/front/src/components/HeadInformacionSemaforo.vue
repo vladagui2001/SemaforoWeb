@@ -3,25 +3,25 @@
         <div class="container">
   <div class="row">
     <div class="col">
-      <label >Id Unico </label>
+      <label >ID Único </label>
     </div>
     <div class="col">
       <label >Nombre</label>
     </div>
     <div class="col">
-      <label>Estado de la lus</label>
+      <label>Estado de la luz</label>
     </div>
     <div class="col">
-      <label >Ensender Lus Verde</label>
+      <label >Encender Luz Verde</label>
     </div>
     <div class="col">
-        <label>Ensender Lus Roja</label>
+        <label>Encender Luz Roja</label>
     </div>
     <div class="col">
-      <label>IP</label>
+      <label>Dirección IP</label>
     </div>
     <div class="col">
-        <label>Modo</label>
+        <label></label>
     </div>
   </div>
 </div>

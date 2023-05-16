@@ -16,7 +16,7 @@
               <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Folio..."></div>
               <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Rol..."></div>
               <div class="col"><button class="btn btn-dark">Buscar</button></div>
-              <div class="col"><a href="AddUsuario.html" class="btn btn-success">Agregar Nuevo Usuario</a></div>
+              <div class="col"><router-link to="/registarusuario" href="AddUsuario.html" class="btn btn-success">Agregar Nuevo Usuario</router-link></div>
             </div>
             </div>
             
