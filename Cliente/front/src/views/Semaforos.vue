@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container mt-5">
+        <div class="container mb-0">
             <!-- parte 1 -->
             <div class="raw">
                 <div class="col"></div>
