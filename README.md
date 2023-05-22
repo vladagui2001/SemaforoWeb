@@ -8,4 +8,5 @@ Esta aplicación permite controlar los semáforos de un nodo de una mina cambian
 - Nodejs 18.15.0.0
 - SQLite 3.12.2 si se quiere acceder a la base de datos.
 
+#Instalación
 Para la instalación del proyecto se tiene que ejecutar el Archivo "InstalaciónAplicación.exe que viene en el repositorio"
