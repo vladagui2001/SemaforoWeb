@@ -11,7 +11,8 @@ Esta aplicación permite controlar los semáforos de un nodo de una mina cambian
 # Instalación
 Para la instalación del proyecto se tiene que ejecutar el Archivo "Instalar Aplicación (Unica Vez).exe" que viene en la raíz de la carpeta.
 Como lo menciona el nombre se tiene que ejecutar una única vez para la instalación de dependencias necesarias para que el proyecto corra.
-- Esto actualizará e instalará:
+
+## Esto actualizará e instalará:
  - El Pip de Python a su versión más reciente
  - Las liberías de flask y sus componentes necesarios para funcionar.
  - Instalará los componentes de Vue necesarios para funcionar. 
