@@ -9,4 +9,11 @@ Esta aplicación permite controlar los semáforos de un nodo de una mina cambian
 - SQLite 3.12.2 si se quiere acceder a la base de datos.
 
 # Instalación
-Para la instalación del proyecto se tiene que ejecutar el Archivo "InstalaciónAplicación.exe que viene en el repositorio"
+Para la instalación del proyecto se tiene que ejecutar el Archivo "Instalar Aplicación (Unica Vez).exe" que viene en la raíz de la carpeta.
+Como lo menciona el nombre se tiene que ejecutar una única vez para la instalación de dependencias necesarias para que el proyecto corra.
+-Esto actualizará e instalará:
+ -El Pip de Python a su versión más reciente
+ -Las liberías de flask y sus componentes necesarios para funcionar.
+ -Instalará los componentes de Vue necesarios para funcionar. 
+ 
+ 
