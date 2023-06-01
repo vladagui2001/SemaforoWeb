@@ -1,5 +1,5 @@
 from UsuarioModel import UsuarioModel
-from PermisosMoel import PermisoModel
+from PermisosMoel import PermisoModel 
 from Permisos_R_Usuarios import Permisos_R_Usuarios
 from SemaforosModel import SemaforoModel
 

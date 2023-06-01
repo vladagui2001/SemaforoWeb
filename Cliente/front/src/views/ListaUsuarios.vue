@@ -5,6 +5,7 @@
     <div class="container mt-3">
         <div class="row">
           <div class="col">
+            <h1>ㅤ</h1><br>
             <h1>Administración de Usuarios</h1><br>
             <h3>Buscar Usuario:</h3><br>
           </div>
@@ -32,22 +33,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td scope="col">{{Usuarios[0].ID}}</td>
-                <td scope="col">{{Usuarios[0].NOMBRE}}</td>
-                <td scope="col">{{Usuarios[0].FICHA}}</td>
-                <td scope="col">{{Usuarios[0].ROL}}</td>
-                <td><div class="col mr-3">
-                  <button class="btn btn-outline-secondary">Modificar</button>
-                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
-              </div></td>
-              </tr>
 
-              <tr>
-                <td scope="col">{{Usuarios[1].ID}}</td>
-                <td scope="col">{{Usuarios[1].NOMBRE}}</td>
-                <td scope="col">{{Usuarios[1].FICHA}}</td>
-                <td scope="col">{{Usuarios[1].ROL}}</td>
+              <tr v-for="(Usario) in Usarios">
+                <td scope="col">{{Usario.Id}}</td>
+                <td scope="col">{{Usario.Usuario}}</td>
+                <td scope="col">{{Usario.Ficha}}</td>
+                <td scope="col">{{Usario.Password}}</td>
                 <td><div class="col mr-3">
                   <button class="btn btn-outline-secondary">Modificar</button>
                   <button class="btn btn-outline-secondary m-2">Eliminar</button>
@@ -62,28 +53,22 @@
 </div>
 </template>
 <script>
-import { logicalExpression } from '@babel/types';
-export default {
-        data() {
-          return {
-           Usuarios:[
-            {   
-                ID:1,
-                NOMBRE:"Ejemplo",
-                FICHA:"Ejemplo",
-                ROL:"Ejemplo"
-            },
-            {   
-                ID:2,
-                NOMBRE:"Ejemplo 2",
-                FICHA:"Ejemplo 2",
-                ROL:"Ejemplo 2"
-            }
-           ]
-          }
-        },
-        methods:{
-            
-        }
+export default{
+    data() {
+      return {
+       Usarios:[]
       }
+    },
+    created(){
+      this.$http.get('http://127.0.0.1:7000/Usarios')
+                    .then(res=>{
+                     this.Usarios= res.data
+                    })
+      
+    },
+    methods:{
+      
+        
+    }
+  }
 </script>
