@@ -6,7 +6,7 @@ class Permisos_R_Usuarios:
 
     def select (self):
         query = '''
-        SELECT Usuario.NOMBRE,PERMISOS.NOMBRE 
+        SELECT Usuario.ID,Usuario.NOMBRE,PERMISOS.NOMBRE,Usuario.FICHA
             FROM USARIO_R_PERMISO
                 INNER JOIN Usuario on 
                     Usuario.ID = USARIO_R_PERMISO.ID_USUARIO  
@@ -15,7 +15,7 @@ class Permisos_R_Usuarios:
         '''
         self.lista=[]
         for row in self.DataBase.Selecionar(query):
-            obj =  {"Usuario":row[0],"Permiso":row[1]}
+            obj =  {"ID":row[0],"Usuario":row[1],"Permiso":row[2],"FICHA":row[2]}
             self.lista.append(obj)
         return self.lista
     
@@ -26,3 +26,4 @@ class Permisos_R_Usuarios:
     def Delet(self,id_Usario,id_permiso):
         query='DELETE FROM "main"."USARIO_R_PERMISO" WHERE "ID_USUARIO"='+str(id_Usario)+'AND "ID_PERMISO"='+str(id_permiso) 
         print(self.DataBase.Modificar(query))
+

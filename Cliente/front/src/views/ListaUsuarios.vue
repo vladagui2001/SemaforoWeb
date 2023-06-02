@@ -32,27 +32,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td scope="col">{{Usuarios[0].ID}}</td>
-                <td scope="col">{{Usuarios[0].NOMBRE}}</td>
-                <td scope="col">{{Usuarios[0].FICHA}}</td>
-                <td scope="col">{{Usuarios[0].ROL}}</td>
+              <tr v-for="(Usuario) in Usuarios">
+                <td scope="col">{{Usuario.ID}}</td>
+                <td scope="col">{{Usuario.Usuario}}</td>
+                <td scope="col">{{Usuario.FICHA}}</td>
+                <td scope="col">{{Usuario.Permiso}}</td>
                 <td><div class="col mr-3">
                   <button class="btn btn-outline-secondary">Modificar</button>
                   <button class="btn btn-outline-secondary m-2">Eliminar</button>
               </div></td>
               </tr>
-
-              <tr>
-                <td scope="col">{{Usuarios[1].ID}}</td>
-                <td scope="col">{{Usuarios[1].NOMBRE}}</td>
-                <td scope="col">{{Usuarios[1].FICHA}}</td>
-                <td scope="col">{{Usuarios[1].ROL}}</td>
-                <td><div class="col mr-3">
-                  <button class="btn btn-outline-secondary">Modificar</button>
-                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
-              </div></td>
-              </tr>
+              
 
             </tbody>
           </table> 
@@ -66,24 +56,19 @@ import { logicalExpression } from '@babel/types';
 export default {
         data() {
           return {
-           Usuarios:[
-            {   
-                ID:1,
-                NOMBRE:"Ejemplo",
-                FICHA:"Ejemplo",
-                ROL:"Ejemplo"
-            },
-            {   
-                ID:2,
-                NOMBRE:"Ejemplo 2",
-                FICHA:"Ejemplo 2",
-                ROL:"Ejemplo 2"
-            }
-           ]
+           Usuarios:[]
           }
         },
         methods:{
             
-        }
+        },
+        created(){
+      this.$http.get('http://127.0.0.1:7000/Usarios')
+                    .then(res=>{
+                      
+                     this.Usuarios= res.data
+                    })
+      
+    },
       }
 </script>

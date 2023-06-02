@@ -79,12 +79,10 @@ def DeleteSemaforo(id):
 #-----------------------------------------------------------------------------------
 #-------------------Area de Usuario -----------------------------------------------
 #Get Usuarios
-@app.route("/Usarios"  )
+@app.route("/Usarios")
 #@jwt_required()
 def GetUsario():
-    #current_user = get_jwt_identity()
-    #print(current_user)
-    response =  varIndex.DtoUsuario().select()
+    response= varIndex.DtoPermisos_R_Usuarios().select()
     return jsonify(response)
 
 
@@ -173,4 +171,4 @@ def Config (id):
         return jsonify({'men':'error'})
 #-----------------------------------------------------------------------------------
 if __name__ == '__main__':
-    app.run(debug=True,port=7000)
+    app.run(port=7000)
