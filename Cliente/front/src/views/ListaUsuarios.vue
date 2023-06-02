@@ -5,6 +5,7 @@
     <div class="container mt-3">
         <div class="row">
           <div class="col">
+            <h1></h1><br>
             <h1>Administración de Usuarios</h1><br>
             <h3>Buscar Usuario:</h3><br>
           </div>
@@ -32,11 +33,15 @@
               </tr>
             </thead>
             <tbody>
+
               <tr v-for="(Usuario) in Usuarios">
                 <td scope="col">{{Usuario.ID}}</td>
                 <td scope="col">{{Usuario.Usuario}}</td>
                 <td scope="col">{{Usuario.FICHA}}</td>
                 <td scope="col">{{Usuario.Permiso}}</td>
+
+
+      
                 <td><div class="col mr-3">
                   <button class="btn btn-outline-secondary">Modificar</button>
                   <button class="btn btn-outline-secondary m-2">Eliminar</button>
@@ -69,6 +74,6 @@ export default {
                      this.Usuarios= res.data
                     })
       
-    },
-      }
+    }
+  }
 </script>

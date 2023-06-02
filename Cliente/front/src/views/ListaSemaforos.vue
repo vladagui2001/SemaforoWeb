@@ -4,6 +4,7 @@
             <div class="container mt-3">
         <div class="row">
           <div class="col">
+            <h1>ㅤ</h1><br>
             <h1>Administración de Semáforos</h1><br>
             <h3>Buscar Semáforo:</h3><br>
           </div>
