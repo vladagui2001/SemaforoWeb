@@ -74,4 +74,18 @@
     </body>
     </div>
 </template>
+<script>
+import {LoginStore} from '@/store/LoginStore.js'
+import { storeToRefs } from 'pinia'
+
+
+export default {
+  name: 'HomeView',
+  setup:()=>{
+    const log = LoginStore()
+    const {Token} = storeToRefs(LoginStore)
+    
+  }
+}
+</script>
 

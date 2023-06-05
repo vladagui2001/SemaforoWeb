@@ -26,7 +26,7 @@
                                                     <div class="mb-4"><mwc-textfield class="w-100" label="Usuario/Folio" outlined></mwc-textfield></div>
                                                     <div class="mb-4"><mwc-textfield class="w-100" label="Contraseña" outlined icontrailing="visibility_off" type="password"></mwc-textfield></div>
                                                     <div class="form-group d-flex align-items-center justify-content-center">
-                                                        <a class="btn btn-dark" href="/Semaforo">Iniciar Sesión</a>
+                                                        <a class="btn btn-dark" >Iniciar Sesión</a>
                                                     </div>
                                                 </form>
                                                 <!-- Auth card message-->                                            </div>
@@ -49,7 +49,10 @@
     </div>
 </template>
 <script>
+//v-on:click="sumit()"
 import { logicalExpression } from '@babel/types';
+import {LoginStore} from '@/store/LoginStore.js'
+import { storeToRefs } from 'pinia'
 
 export default{
     name:"LogIn",
@@ -57,19 +60,16 @@ export default{
       return {
         Usuario:"",
         Contraseña:""
-      }
+      }    
     },
     methods:{
         sumit(){
+            const log = LoginStore()
+            const {Token} = storeToRefs(LoginStore)
+
             let username=this.Usuario
             let password=this.Contraseña
-            console.log({
-            username,
-            password
 
-        });
-        
-          
         this.$http.post("http://127.0.0.1:7000/login",
         {
             username,
@@ -77,13 +77,15 @@ export default{
 
         }
         ).then(function (response) {
+
         
         console.log(response)
-          
+        log.Login(response.data)
         });
 
         
         }
-    }
+    },
+
 }
 </script>

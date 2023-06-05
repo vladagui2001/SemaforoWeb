@@ -2,6 +2,7 @@ from flask import Flask ,request
 from flask import jsonify 
 from index import index
 from flask_cors import CORS
+import requests
 
 from flask_jwt_extended import create_access_token , get_jwt_identity
 from flask_jwt_extended import jwt_required ,JWTManager
@@ -28,7 +29,7 @@ def login():
     print(password)
     response =  varIndex.DtoUsuario().select()
     for item in response:
-        if item["NOMBRE"] == username or item["PASSWORD"]==password:
+        if item["Usuario"] == username or item["PASSWORD"]==password:
             access_token = create_access_token(identity=username)
             return jsonify(access_token=access_token)
             #return "ok"
@@ -124,6 +125,7 @@ def DeleteUsario(id):
 # Control
 @app.route('/Control/<id>',methods=["POST"]) 
 def ContolVerificar(id):
+    
     Ip=request.json.get("Ip")
     Nombre=request.json.get("Nombre")
     response =  varIndex.DtoSemaforos().selectById(Id=id)
@@ -140,8 +142,10 @@ def ContolVerificar(id):
 def EstadoA (id):
     response =  varIndex.DtoSemaforos().selectById(Id=id)
     if response != []:
-        nodo ='http://'+response[0]['IP']+'/' 
-
+        #nodo ='http://'+response[0]['IP']+'/' 
+        nodo ='http://localhost/'
+        res = requests.get('http://127.0.0.1:6000/Input/A')
+        print(res)
         return jsonify({'men':nodo})
     else:
         return jsonify({'men':'error'})
@@ -150,8 +154,10 @@ def EstadoA (id):
 def EstadoB (id):
     response =  varIndex.DtoSemaforos().selectById(Id=id)
     if response != []:
-        nodo ='http://'+response[0]['IP']+'/' 
-
+        #nodo ='http://'+response[0]['IP']+'/' 
+        nodo ='http://localhost/'
+        res = requests.get('http://127.0.0.1:6000/Input/B')
+        print(res)
         return jsonify({'men':nodo})
     else:
         return jsonify({'men':'error'})
@@ -171,4 +177,4 @@ def Config (id):
         return jsonify({'men':'error'})
 #-----------------------------------------------------------------------------------
 if __name__ == '__main__':
-    app.run(port=7000)
+    app.run(port=7000,debug=True)

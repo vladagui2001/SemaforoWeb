@@ -6,7 +6,7 @@ class Permisos_R_Usuarios:
 
     def select (self):
         query = '''
-        SELECT Usuario.ID,Usuario.NOMBRE,PERMISOS.NOMBRE,Usuario.FICHA
+        SELECT Usuario.ID,Usuario.NOMBRE,PERMISOS.NOMBRE,Usuario.FICHA, Usuario.PASSWORD
             FROM USARIO_R_PERMISO
                 INNER JOIN Usuario on 
                     Usuario.ID = USARIO_R_PERMISO.ID_USUARIO  
@@ -15,7 +15,8 @@ class Permisos_R_Usuarios:
         '''
         self.lista=[]
         for row in self.DataBase.Selecionar(query):
-            obj =  {"ID":row[0],"Usuario":row[1],"Permiso":row[2],"FICHA":row[2]}
+            print(row)
+            obj =  {"ID":row[0],"Usuario":row[1],"Permiso":row[2],"FICHA":row[3],"PASSWORD":row[4]}
             self.lista.append(obj)
         return self.lista
     
