@@ -1,5 +1,6 @@
 <template>
     <div>
+        
         <div class="container mb-0">
             <!-- parte 1 -->
             <div class="raw">
@@ -11,22 +12,28 @@
             <div class="raw">
                 <div class="col"></div>
                 <div class="col">
-                    <HeasInformacionSemaforo></HeasInformacionSemaforo>
-                    <InformacionSemaforo 
-                    p-nombre="Rampa 2 -12"
-                    p-direcion-ip="182.169.1.2"
-                    p-id-unico="1"
-                    p-estado="true"
-                    ></InformacionSemaforo>
-
-                    <InformacionSemaforo 
-                    p-nombre="Rampa norte 1-13"
-                    p-direcion-ip="182.169.1.7"
-                    p-id-unico="2"
-                    p-estado="true"
-                    ></InformacionSemaforo>
-
-                </div>
+                    <table class="table mt-4">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre Nodo</th>
+                <th scope="col">Dirección IP</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(Semaforo) in Semaforos">
+                <td scope="col">{{Semaforo.ID}}</td>
+                <td scope="col">{{Semaforo.NOMBRE}}</td>
+                <td scope="col">{{Semaforo.IP}}</td>
+                <td><div class="col mr-3">
+                  <button class="btn btn-success" v-on:click="EsradoA">Estado A</button>
+                  <button class="btn btn-danger m-2" v-on:click="EsradoB">Estado B</button>
+              </div></td>
+              </tr>
+            </tbody>
+          </table> 
+                </div>     
                 <div class="col"></div>
             </div>
            
@@ -35,14 +42,37 @@
     </div>
 </template>
 <script>
-import InformacionSemaforo from '@/components/InformacionSemaforo.vue';
-import HeasInformacionSemaforo from '@/components/HeadInformacionSemaforo.vue';
 
 export default{
     name:'Semaforos',
-    components:{
-        InformacionSemaforo,
-        HeasInformacionSemaforo
+    data() {
+      return {
+       Semaforos:[]
+      }
+    },
+    created(){
+      this.$http.get('http://127.0.0.1:7000/Semaforos')
+                    .then(res=>{
+                      
+                     this.Semaforos= res.data
+                    })
+      
+    },
+    methods:{
+        EsradoA(){
+            this.$http.get('http://127.0.0.1:7000/Control/A/1')
+                    .then(res=>{
+                      
+                     alert(res.data) 
+                    })
+        },
+        EsradoB(){
+            this.$http.get('http://127.0.0.1:7000/Control/B/1')
+                    .then(res=>{
+                      
+                     alert(res.data.men) 
+                    })
+        }
     }
 }
 

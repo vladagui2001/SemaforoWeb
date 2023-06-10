@@ -5,7 +5,7 @@
     <div class="container mt-3">
         <div class="row">
           <div class="col">
-            <h1>ㅤ</h1><br>
+            <h1></h1><br>
             <h1>Administración de Usuarios</h1><br>
             <h3>Buscar Usuario:</h3><br>
           </div>
@@ -34,16 +34,20 @@
             </thead>
             <tbody>
 
-              <tr v-for="(Usario) in Usarios">
-                <td scope="col">{{Usario.Id}}</td>
-                <td scope="col">{{Usario.Usuario}}</td>
-                <td scope="col">{{Usario.Ficha}}</td>
-                <td scope="col">{{Usario.Password}}</td>
+              <tr v-for="(Usuario) in Usuarios">
+                <td scope="col">{{Usuario.ID}}</td>
+                <td scope="col">{{Usuario.Usuario}}</td>
+                <td scope="col">{{Usuario.FICHA}}</td>
+                <td scope="col">{{Usuario.Permiso}}</td>
+
+
+      
                 <td><div class="col mr-3">
                   <button class="btn btn-outline-secondary">Modificar</button>
                   <button class="btn btn-outline-secondary m-2">Eliminar</button>
               </div></td>
               </tr>
+              
 
             </tbody>
           </table> 
@@ -53,22 +57,23 @@
 </div>
 </template>
 <script>
-export default{
-    data() {
-      return {
-       Usarios:[]
-      }
-    },
-    created(){
+import { logicalExpression } from '@babel/types';
+export default {
+        data() {
+          return {
+           Usuarios:[]
+          }
+        },
+        methods:{
+            
+        },
+        created(){
       this.$http.get('http://127.0.0.1:7000/Usarios')
                     .then(res=>{
-                     this.Usarios= res.data
+                      
+                     this.Usuarios= res.data
                     })
       
-    },
-    methods:{
-      
-        
     }
   }
 </script>

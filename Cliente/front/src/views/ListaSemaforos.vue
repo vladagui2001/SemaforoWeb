@@ -57,6 +57,7 @@ export default{
     created(){
       this.$http.get('http://127.0.0.1:7000/Semaforos')
                     .then(res=>{
+                      
                      this.Semaforos= res.data
                     })
       
