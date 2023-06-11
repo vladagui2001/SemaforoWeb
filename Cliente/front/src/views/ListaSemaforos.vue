@@ -4,17 +4,12 @@
             <div class="container mt-3">
         <div class="row">
           <div class="col">
-            <h1>ㅤ</h1><br>
-            <h1>Administración de Semáforos</h1><br>
-            <h3>Buscar Semáforo:</h3><br>
+            <h1 class="unselectable">ㅤ</h1><br>
+            <h1 class="unselectable">Administración de Semáforos</h1><br>
           </div>
           
           <div class="container">
             <div class="row">
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un ID..."></div>
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Semáforo o Nodo..."></div>
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa una Dirección IP..."></div>
-              <div class="col"><button class="btn btn-dark">Buscar</button></div>
               <div class="col"><router-link to="/registarsemaforo" class="btn btn-success">Agregar Nuevo Semáforo</router-link></div>
             </div>
             </div>
@@ -23,10 +18,10 @@
           <table class="table mt-4">
             <thead class="table-dark">
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre Nodo</th>
-                <th scope="col">Dirección IP</th>
-                <th scope="col"></th>
+                <th scope="col" class="unselectable">ID</th>
+                <th scope="col" class="unselectable">Nombre Nodo</th>
+                <th scope="col" class="unselectable">Dirección IP</th>
+                <th scope="col" class="unselectable"></th>
               </tr>
             </thead>
             <tbody>

@@ -4,21 +4,23 @@
         <div class="container mb-0">
             <!-- parte 1 -->
             <div class="raw">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
+                <div class="col unselectable" ></div>
+                <div class="col unselectable"></div>
+                <div class="col unselectable"></div>
             </div>
             <!-- parte 1 -->
             <div class="raw">
-                <div class="col"></div>
+                <div class="col">
+                  <h1>ㅤ</h1><br>
+                </div>
                 <div class="col">
                     <table class="table mt-4">
             <thead class="table-dark">
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre Nodo</th>
-                <th scope="col">Dirección IP</th>
-                <th scope="col"></th>
+                <th scope="col unselectable">ID</th>
+                <th scope="col unselectable">Nombre Nodo</th>
+                <th scope="col unselectable">Dirección IP</th>
+                <th scope="col unselectable"></th>
               </tr>
             </thead>
             <tbody>
