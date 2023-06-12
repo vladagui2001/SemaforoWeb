@@ -4,23 +4,24 @@
         <div class="container mb-0">
             <!-- parte 1 -->
             <div class="raw">
-                <div class="col unselectable" ></div>
-                <div class="col unselectable"></div>
-                <div class="col unselectable"></div>
+                <div class="unselectable col"></div>
+                <div class="unselectable col"></div>
+                <div class="unselectable col"></div>
             </div>
             <!-- parte 1 -->
-            <div class="raw">
+            <div class="container mt-3">
                 <div class="col">
                   <h1>ㅤ</h1><br>
+                  <h1 class="unselectable">Semáforos en Funcionamiento</h1>
                 </div>
                 <div class="col">
-                    <table class="table mt-4">
+                    <table class="table mt-5">
             <thead class="table-dark">
               <tr>
-                <th scope="col unselectable">ID</th>
-                <th scope="col unselectable">Nombre Nodo</th>
-                <th scope="col unselectable">Dirección IP</th>
-                <th scope="col unselectable"></th>
+                <th scope="col" class="unselectable">ID</th>
+                <th scope="col" class="unselectable">Nombre Nodo</th>
+                <th scope="col" class="unselectable">Dirección IP</th>
+                <th scope="col" class="unselectable">Estado del Semáforo</th>
               </tr>
             </thead>
             <tbody>
@@ -29,8 +30,8 @@
                 <td scope="col">{{Semaforo.NOMBRE}}</td>
                 <td scope="col">{{Semaforo.IP}}</td>
                 <td><div class="col mr-3">
-                  <button class="btn btn-success" v-on:click="EsradoA">Estado A</button>
-                  <button class="btn btn-danger m-2" v-on:click="EsradoB">Estado B</button>
+                  <button class="btn btn-success" v-on:click="EsradoA">Encender</button>
+                  <button class="btn btn-danger m-2" v-on:click="EsradoB">Apagar</button>
               </div></td>
               </tr>
             </tbody>

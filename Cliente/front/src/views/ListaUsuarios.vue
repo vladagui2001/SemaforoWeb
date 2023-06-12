@@ -62,20 +62,20 @@ export default {
         methods:{
           eliminar(id){
         this.$swal.fire({
-          title: '¿quieres Eliminaras Este Reguistro Pra Simpre?',
-          text: "¿Estas Seguro?",
+          title: '¿Estás seguro que quieres eliminar el registro?',
+          text: "Una vez eliminado no se podrá recuperar",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
+          confirmButtonText: 'Sí, Eliminar',
+          cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
               this.$http.post('http://127.0.0.1:7000/Usarios/Delete/'+id).then(res=>{
                 this.$swal.fire(
-                'Reguistro a sido Eliminado!',
-                'El reguistro a sido eliminado permante mente',
-                'Corectamnte '
+                'El registro ha sido eliminado',
+                'Corectamnte!'
               ).then(()=>{
                 window.location.reload()
               })
@@ -85,7 +85,7 @@ export default {
           })
       },
       Modificar(){
-        alert('Presionaste Modificar')
+        alert('Has pulsado Modificar')
       }
       
             
