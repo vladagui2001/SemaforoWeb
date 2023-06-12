@@ -35,8 +35,8 @@
                 <td scope="col">{{Semaforo.NOMBRE}}</td>
                 <td scope="col">{{Semaforo.IP}}</td>
                 <td><div class="col mr-3">
-                  <button class="btn btn-outline-secondary">Modificar</button>
-                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
+                  <button class="btn btn-outline-secondary" v-on:click="Modificar()">Modificar</button>
+                  <button class="btn btn-outline-secondary m-2" v-on:click="eliminar(Semaforo.ID)">Eliminar</button>
               </div></td>
               </tr>
             </tbody>
@@ -63,6 +63,33 @@ export default{
       
     },
     methods:{
+      eliminar(id){
+        this.$swal.fire({
+          title: '¿quieres Eliminaras Este Reguistro Pra Simpre?',
+          text: "¿Estas Seguro?",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+              this.$http.post('http://127.0.0.1:7000/Semaforo/Delete/'+id).then(res=>{
+                this.$swal.fire(
+                'Reguistro a sido Eliminado!',
+                'El reguistro a sido eliminado permante mente',
+                'Corectamnte '
+              ).then(()=>{
+                window.location.reload()
+              })
+
+              })
+            }
+          })
+      },
+      Modificar(){
+        alert('Presionaste Modificar')
+      }
       
         
     }
