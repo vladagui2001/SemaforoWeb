@@ -47,15 +47,17 @@ export default{
       
     },
     methods:{
-      /*
+      
       enviar(){
         let Nombre = this.Nombre
+        let ip = this.Ip
         this.$http.post('http://127.0.0.1:7000/Semaforos/Edit',
         {
-          Nombre
+          Nombre,
+          ip
         })
         this.$router.push("ListaSemaforos");
-      }*/
+      }
       
         
     }

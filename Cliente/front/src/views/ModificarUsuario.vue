@@ -1,6 +1,5 @@
 <template>
-
-    <div>
+     <div>
         <div class="container mt-4">
 
           <div class="col">
@@ -10,19 +9,19 @@
             
                 <div class="col-xs-4 mb-3 form-outline w-50">
                   <label for="exampleInputEmail1" class="form-label">Nombre o Usuario</label>
-                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input  type="text" v-model="Nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="col-xs-4 mb-3 form-outline w-50">
                   <label for="exampleInputEmail1" class="form-label">No. de Ficha</label>
-                  <input  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input  type="text" v-model="FICHA" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="col-xs-4 mb-3 form-outline w-50">
                   <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                  <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
+                  <input type="password" v-model="Password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="col-xs-4 mb-4 form-outline w-50">
                   <label for="exampleInputPassword1" class="form-label">Confimar Contraseña</label>
-                  <input type="password" v-model="Contraseña" class="form-control" id="exampleInputPassword1">
+                  <input type="password" v-model="Password" class="form-control" id="exampleInputPassword1">
                 </div>
                 
                 <!--
@@ -37,7 +36,7 @@
                 -->
 
                 <button v-on:click="enviar()" class="btn btn-success">Crear Usuario</button>
-                <router-link to="/listausuarios"  v-on:click="sumit" class="btn btn-outline-secondary m-3">Cancelar</router-link>
+                <router-link to="/listausuarios" class="btn btn-outline-secondary m-3">Cancelar</router-link>
 
               
         </div>
@@ -45,22 +44,39 @@
 </template>
 <script>
 export default{
-    name:"RegistarUsuario",
+    name:"ModificarUsuario",
+    props: ['Id'],
     data() {
       return {
-        Nombre:""
+        Nombre:"",
+        Password:"",
+        FICHA:""
       }
     },
-    
+    created(){
+      console.log(this.$route.params.Id);
+      this.$http.get('http://127.0.0.1:7000//Usarios/'+this.$route.params.Id)
+                    .then(res=>{
+                     this.ID= this.$route.params.Id
+                     this.Nombre= res.data[0].NOMBRE
+                     this.Password= res.data[0].PASSWORD
+                     this.FICHA= res.data[0].FICHA
+                    })
+      
+    },
     methods:{
+      
       enviar(){
         let Nombre = this.Nombre
-        this.$http.post('http://127.0.0.1:7000/Usarios/Add',
+        let Password = this.Password
+        let FICHA = this.FICHA
+        this.$http.post('http://127.0.0.1:7000//Usarios/Edit',
         {
-          Nombre
+          Nombre,
+          Password,
+          FICHA
         })
         this.$router.push("ListaUsuarios");
-        location.reload()
       }
       
         

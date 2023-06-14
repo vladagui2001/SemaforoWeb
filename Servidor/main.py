@@ -7,17 +7,12 @@ import requests
 from flask_jwt_extended import create_access_token , get_jwt_identity
 from flask_jwt_extended import jwt_required ,JWTManager
 
-
-
 app= Flask(__name__)
 cors = CORS(app, resources={r"*": {"origins": "*"}})
 varIndex=index()
 
 app.config["JWT_SECRET_KEY"] = "SemaforoMagico"  # Change this!
 jwt = JWTManager(app)
-
-
-
 
     
 #---------Area de Login --------------

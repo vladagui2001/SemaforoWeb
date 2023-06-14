@@ -5,18 +5,13 @@
     <div class="container mt-3">
         <div class="row">
           <div class="col">
-            <h1></h1><br>
-            <h1>Administración de Usuarios</h1><br>
-            <h3>Buscar Usuario:</h3><br>
+            <h1 class="unselectable"></h1><br>
+            <h1 class="unselectable">ㅤ</h1><br>
+            <h1 class="unselectable">Administración de Usuarios</h1><br>
           </div>
           
           <div class="container">
             <div class="row">
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un ID..."></div>
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Nombre..."></div>
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Folio..."></div>
-              <div class="col"><input  type="text" class="form-control" placeholder="Ingresa un Rol..."></div>
-              <div class="col"><button class="btn btn-dark">Buscar</button></div>
               <div class="col"><router-link to="/registarusuario" href="AddUsuario.html" class="btn btn-success">Agregar Nuevo Usuario</router-link></div>
             </div>
             </div>
@@ -25,11 +20,11 @@
           <table class="table mt-4">
             <thead class="table-dark">
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre/Usuario</th>
-                <th scope="col">Ficha</th>
-                <th scope="col">Rol</th>
-                <th scope="col"></th>
+                <th scope="col" class="unselectable">ID</th>
+                <th scope="col" class="unselectable">Nombre/Usuario</th>
+                <th scope="col" class="unselectable">Ficha</th>
+                <th scope="col" class="unselectable">Rol</th>
+                <th scope="col" class="unselectable"></th>
               </tr>
             </thead>
             <tbody>
@@ -43,8 +38,8 @@
 
       
                 <td><div class="col mr-3">
-                  <button class="btn btn-outline-secondary">Modificar</button>
-                  <button class="btn btn-outline-secondary m-2">Eliminar</button>
+                  <button class="btn btn-outline-secondary" v-on:click="Modificar()">Modificar</button>
+                  <button class="btn btn-outline-secondary m-2" v-on:click="eliminar(Usuario.ID)">Eliminar</button>
               </div></td>
               </tr>
               
@@ -65,6 +60,34 @@ export default {
           }
         },
         methods:{
+          eliminar(id){
+        this.$swal.fire({
+          title: '¿Estás seguro que quieres eliminar el registro?',
+          text: "Una vez eliminado no se podrá recuperar",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, Eliminar',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+              this.$http.post('http://127.0.0.1:7000/Usarios/Delete/'+id).then(res=>{
+                this.$swal.fire(
+                'El registro ha sido eliminado',
+                'Corectamnte!'
+              ).then(()=>{
+                window.location.reload()
+              })
+
+              })
+            }
+          })
+      },
+      Modificar(){
+        alert('Has pulsado Modificar')
+      }
+      
             
         },
         created(){
